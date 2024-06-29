@@ -1,0 +1,17 @@
+Question 3:
+//Given a string of words, implement a function that returns the shortest word in the string.
+
+fn shortestword(s: &str) -> &str {
+    s.split_whitespace()
+        .min_by_key(|word| word.len())
+        .unwrap_or("")
+}
+fn main() {
+    let s = "This is a string with some short words";
+    let word = shortestword(&s);
+    if !word.is_empty() {
+        println!("The shortest word is: '{}'", word);
+    } else {
+        println!("The input string is empty");
+    }
+}
