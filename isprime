@@ -1,0 +1,23 @@
+Question 10:
+// Check if a number is prime in Rust
+fn isprime(num: u32) -> bool {
+    if num <= 1 {
+        return false;
+    }
+    let limit = (num as f64).sqrt() as u32;
+    for i in 2..=limit {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+
+fn main() {
+    let number = 29;
+    if isprime(number) {
+        println!("{} is a prime number.", number);
+    } else {
+        println!("{} is not a prime number.", number);
+    }
+}
